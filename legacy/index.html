@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Exercise Tracker</h1>
+    <p class="subtitle">Track the calories you burn during your workout.</p>
+
+    <!-- Step 1: Weight -->
+    <section class="card">
+      <h2>1. Your Weight</h2>
+      <div class="row">
+        <input type="number" id="weight" min="1" step="0.1" placeholder="Enter your weight">
+        <select id="weight-unit">
+          <option value="kg">kg</option>
+          <option value="lb">lb</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Step 2: Add exercise -->
+    <section class="card">
+      <h2>2. Add an Exercise</h2>
+      <form id="exercise-form">
+        <label>
+          Exercise
+          <select id="exercise" required></select>
+        </label>
+
+        <label>
+          Machine / Equipment
+          <select id="machine" required></select>
+        </label>
+
+        <label>
+          Intensity
+          <select id="intensity">
+            <option value="light">Light</option>
+            <option value="moderate" selected>Moderate</option>
+            <option value="vigorous">Vigorous</option>
+          </select>
+        </label>
+
+        <label>
+          Duration (minutes)
+          <input type="number" id="duration" min="1" step="1" placeholder="e.g. 20" required>
+        </label>
+
+        <p id="preview" class="preview"></p>
+        <p id="error" class="error"></p>
+
+        <button type="submit">Add Exercise</button>
+      </form>
+    </section>
+
+    <!-- Step 3: Session log -->
+    <section class="card">
+      <div class="card-header">
+        <h2>3. Today's Workout</h2>
+        <button id="clear-btn" class="secondary">Clear All</button>
+      </div>
+
+      <table id="log-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Machine</th>
+            <th>Intensity</th>
+            <th>Minutes</th>
+            <th>Calories</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="log-body"></tbody>
+      </table>
+      <p id="empty-msg" class="empty">No exercises added yet.</p>
+
+      <div class="total">
+        Total burned: <strong id="total-calories">0</strong> kcal
+      </div>
+    </section>
+
+    <p class="note">
+      Calories are estimated using MET values:
+      <code>kcal = MET × 3.5 × weight(kg) ÷ 200 × minutes</code>.
+      Actual burn varies by person.
+    </p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
