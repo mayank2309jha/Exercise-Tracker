@@ -4,6 +4,13 @@ A running record of everything built in this project, newest first.
 
 ---
 
+## 2026-10-14 — Published to GitHub
+
+- Initialized git (`main` branch) and pushed to https://github.com/mayank2309jha/Exercise-Tracker
+- `.gitignore` excludes `node_modules`, `dist` and `*.tsbuildinfo`.
+
+---
+
 ## 2026-10-14 — v1.0: full exercise-tracking app
 
 The simple HTML/CSS/JS calculator was replaced with a React + TypeScript app built to the product spec. The original 3-file version is kept in [`legacy/`](legacy/).
